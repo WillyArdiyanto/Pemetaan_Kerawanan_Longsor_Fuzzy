@@ -1,0 +1,96 @@
+[System]
+Name='FIS_longsor_simetris2'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=1
+NumRules=29
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Kemiringan_Tanah'
+Range=[0 45]
+NumMFs=5
+MF1='landai':'trimf',[4 12 20]
+MF2='curam':'trimf',[20 33 43]
+MF3='datar':'trapmf',[0 0 4 12]
+MF4='agak_curam':'trimf',[12 20 33]
+MF5='terjal':'trapmf',[33 43 45 45]
+
+[Input2]
+Name='Curah_Hujan'
+Range=[1500 3000]
+NumMFs=3
+MF1='rendah':'trapmf',[1500 1500 1750 2250]
+MF2='sedang':'trimf',[1750 2250 2750]
+MF3='tinggi':'trapmf',[2250 2750 3000 3000]
+
+[Input3]
+Name='Jenis_Tanah'
+Range=[0 50]
+NumMFs=5
+MF1='tidak_peka':'trapmf',[0 0 5 15]
+MF2='kurang_peka':'trimf',[15 25 35]
+MF3='sangat_peka':'trapmf',[35 45 50 50]
+MF4='agak_peka':'trimf',[5 15 25]
+MF5='peka':'trimf',[25 35 45]
+
+[Input4]
+Name='Ketinggian'
+Range=[0 450]
+NumMFs=3
+MF1='rendah':'trapmf',[0 0 100 275]
+MF2='tinggi':'trimf',[100 275 400]
+MF3='sangat_tinggi':'trapmf',[275 400 450 450]
+
+[Input5]
+Name='Penggunaan_Lahan'
+Range=[0 40]
+NumMFs=4
+MF1='rendah':'trapmf',[0 0 5 15]
+MF2='tinggi':'trimf',[15 25 35]
+MF3='sangat_tinggi':'trapmf',[25 35 40 40]
+MF4='sedang':'trimf',[5 15 25]
+
+[Output1]
+Name='Tingkat_kerawanan_longsor'
+Range=[0 30]
+NumMFs=3
+MF1='tidak_rawan':'trapmf',[0 0 5 15]
+MF2='kurang_rawan':'trimf',[5 15 25]
+MF3='rawan':'trapmf',[15 25 30 30]
+
+[Rules]
+3 2 2 1 2, 1 (1) : 1
+3 2 3 1 2, 1 (1) : 1
+3 2 3 1 2, 1 (1) : 1
+3 2 3 1 2, 2 (1) : 1
+3 2 3 1 3, 3 (1) : 1
+1 2 2 1 2, 1 (1) : 1
+1 2 2 1 2, 2 (1) : 1
+1 2 2 2 2, 3 (1) : 1
+3 1 2 1 1, 1 (1) : 1
+1 1 2 1 1, 1 (1) : 1
+4 1 2 1 1, 1 (1) : 1
+1 1 2 1 2, 1 (1) : 1
+2 1 5 1 1, 1 (1) : 1
+3 1 2 1 1, 1 (1) : 1
+3 1 2 1 2, 1 (1) : 1
+1 2 1 1 1, 1 (1) : 1
+1 2 1 1 1, 2 (1) : 1
+1 2 1 1 2, 3 (1) : 1
+4 1 5 2 2, 3 (1) : 1
+3 2 2 1 1, 1 (1) : 1
+3 1 4 1 2, 1 (1) : 1
+1 2 4 1 1, 1 (1) : 1
+1 2 4 1 1, 2 (1) : 1
+1 2 4 1 2, 3 (1) : 1
+5 2 2 1 1, 1 (1) : 1
+5 1 4 1 2, 3 (1) : 1
+3 2 2 1 1, 1 (1) : 1
+1 2 2 1 1, 1 (1) : 1
+1 2 2 1 1, 1 (1) : 1
